@@ -47,8 +47,11 @@ type analysisServer struct{}
 
 func getPort() int {
    time, err := strconv.Atoi(os.Getenv("PORT"))
-   
-   return time
+   if err != nil {
+      return 9999
+   } else {
+   	  return time
+   }
 }
 
 func (s *analysisServer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
