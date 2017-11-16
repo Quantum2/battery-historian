@@ -27,9 +27,9 @@ import (
 	"github.com/google/battery-historian/analyzer"
 )
 
-var (
-	port, err := strconv.Atoi(os.Getenv("PORT"))
+port, err := strconv.Atoi(os.Getenv("PORT"))
 
+var (
 	optimized = flag.Bool("optimized", true, "Whether to output optimized js files. Disable for local debugging.")
 	port      = flag.Int("port", port, "service port")
 
