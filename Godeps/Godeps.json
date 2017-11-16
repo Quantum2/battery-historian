@@ -1,0 +1,14 @@
+{
+	"ImportPath": "github.com/google/battery-historian",
+	"GoVersion": "go1.9",
+	"GodepVersion": "v79",
+	"Packages": [
+		"./..."
+	],
+	"Deps": [
+		{
+			"ImportPath": "github.com/golang/protobuf/proto",
+			"Rev": "1e59b77b52bf8e4b449a57e6f79f21226d571845"
+		}
+	]
+}
