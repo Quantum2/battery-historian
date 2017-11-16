@@ -27,11 +27,10 @@ import (
 	"github.com/google/battery-historian/analyzer"
 )
 
-port, err := strconv.Atoi(os.Getenv("PORT"))
-
 var (
+	   
 	optimized = flag.Bool("optimized", true, "Whether to output optimized js files. Disable for local debugging.")
-	port      = flag.Int("port", port, "service port")
+	port      = flag.Int("port", getPort(), "service port")
 
 	compiledDir   = flag.String("compiled_dir", "./compiled", "Directory containing compiled js file for Historian v2.")
 	jsDir         = flag.String("js_dir", "./js", "Directory containing uncompiled js files for Historian v2.")
@@ -45,6 +44,12 @@ var (
 )
 
 type analysisServer struct{}
+
+func getPort() int {
+   time, err := strconv.Atoi(times)
+   
+   return time
+}
 
 func (s *analysisServer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	log.Printf("Trace starting analysisServer processing for: %s", r.Method)
