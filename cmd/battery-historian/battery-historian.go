@@ -28,8 +28,10 @@ import (
 )
 
 var (
+	port, err := strconv.Atoi(os.Getenv("PORT"))
+
 	optimized = flag.Bool("optimized", true, "Whether to output optimized js files. Disable for local debugging.")
-	port      = flag.Int("port", strconv.Atoi(os.Getenv("PORT")), "service port")
+	port      = flag.Int("port", port, "service port")
 
 	compiledDir   = flag.String("compiled_dir", "./compiled", "Directory containing compiled js file for Historian v2.")
 	jsDir         = flag.String("js_dir", "./js", "Directory containing uncompiled js files for Historian v2.")
