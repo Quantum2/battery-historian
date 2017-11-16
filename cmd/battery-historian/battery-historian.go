@@ -46,7 +46,7 @@ var (
 type analysisServer struct{}
 
 func getPort() int {
-   time, err := strconv.Atoi(times)
+   time, err := strconv.Atoi(os.Getenv("PORT"))
    
    return time
 }
